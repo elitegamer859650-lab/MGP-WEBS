@@ -1,0 +1,182 @@
+import React, { useState } from 'react';
+import { Menu, X, Home, Folder } from 'lucide-react';
+
+const MGPLabsWebsite = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const projects = [
+    {
+      id: 1,
+      title: "AI-Powered Analytics Platform",
+      description: "Advanced data visualization and predictive analytics solution for enterprise clients.",
+      tags: ["AI", "Data Science", "Cloud"]
+    },
+    {
+      id: 2,
+      title: "Blockchain Identity Verification",
+      description: "Secure decentralized identity management system for financial institutions.",
+      tags: ["Blockchain", "Security", "Fintech"]
+    },
+    {
+      id: 3,
+      title: "IoT Smart City Solutions",
+      description: "Integrated urban management platform connecting sensors and city infrastructure.",
+      tags: ["IoT", "Smart Cities", "Infrastructure"]
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 font-sans">
+      {/* Navigation Bar */}
+      <nav className="bg-white shadow-sm sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between h-16">
+            <div className="flex items-center">
+              <div className="flex-shrink-0 flex items-center">
+                <span className="text-2xl font-bold text-blue-600">MGP LABS</span>
+              </div>
+            </div>
+            
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-8">
+              <a href="#home" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">Home</a>
+              <a href="#projects" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">Projects</a>
+            </div>
+            
+            {/* Mobile menu button */}
+            <div className="md:hidden flex items-center">
+              <button
+                onClick={toggleMenu}
+                className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 focus:outline-none"
+              >
+                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <div className="md:hidden">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg">
+              <a href="#home" className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">
+                <Home className="mr-2 h-4 w-4" /> Home
+              </a>
+              <a href="#projects" className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">
+                <Folder className="mr-2 h-4 w-4" /> Projects
+              </a>
+            </div>
+          </div>
+        )}
+      </nav>
+
+      {/* Hero Section with Banner */}
+      <section id="home" className="relative py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Text Content */}
+            <div className="order-2 lg:order-1">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+                Innovating Tomorrow's <span className="text-blue-600">Solutions</span>
+              </h1>
+              <p className="text-xl text-gray-600 mb-8 max-w-2xl">
+                We create cutting-edge technology solutions that transform industries and empower businesses to reach new heights.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <a 
+                  href="#projects" 
+                  className="px-8 py-4 bg-blue-600 text-white font-medium rounded-lg shadow-lg hover:bg-blue-700 transition-colors duration-300 transform hover:-translate-y-1"
+                >
+                  View Our Projects
+                </a>
+                <a 
+                  href="#projects" 
+                  className="px-8 py-4 bg-white text-blue-600 border border-blue-600 font-medium rounded-lg shadow-lg hover:bg-blue-50 transition-colors duration-300"
+                >
+                  Learn More
+                </a>
+              </div>
+            </div>
+            
+            {/* Banner Image */}
+            <div className="order-1 lg:order-2 relative">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <div className="bg-gradient-to-r from-blue-500 to-indigo-600 w-full h-80 md:h-96 rounded-2xl flex items-center justify-center">
+                  <div className="text-center p-6">
+                    <div className="text-white text-4xl font-bold mb-4">MGP LABS</div>
+                    <div className="text-blue-100 text-xl">Innovation & Technology</div>
+                  </div>
+                </div>
+                
+                {/* Decorative elements */}
+                <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-yellow-400 rounded-full opacity-20"></div>
+                <div className="absolute -top-6 -right-6 w-24 h-24 bg-blue-400 rounded-full opacity-20"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Our Projects</h2>
+            <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+              Discover our latest innovations and technological breakthroughs
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project) => (
+              <div 
+                key={project.id} 
+                className="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:-translate-y-1"
+              >
+                <div className="p-6">
+                  <div className="bg-gradient-to-r from-blue-400 to-indigo-500 rounded-xl w-full h-48 mb-6 flex items-center justify-center">
+                    <div className="text-white text-xl font-bold">Project Preview</div>
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{project.title}</h3>
+                  <p className="text-gray-600 mb-4">{project.description}</p>
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.tags.map((tag, index) => (
+                      <span 
+                        key={index} 
+                        className="px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="grid grid-cols-2 gap-3">
+                    <button className="py-2 bg-white border border-blue-600 text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-colors">
+                      Details
+                    </button>
+                    <button className="py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors">
+                      Visit
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <p className="text-lg">Powered by <span className="font-bold text-blue-400">MGP Labs</span></p>
+            <p className="mt-2 text-gray-400">© {new Date().getFullYear()} All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
