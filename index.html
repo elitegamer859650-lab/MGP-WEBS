@@ -167,21 +167,27 @@
         const projects = [
             {
                 id: 1,
-                title: "AI-Powered Analytics Platform",
+                title: "Muslim AI",
                 description: "Advanced data visualization and predictive analytics solution for enterprise clients.",
-                tags: ["AI", "Data Science", "Cloud"]
+                tags: ["AI", "Data Science", "Cloud"],
+                imageUrl: "https://play-lh.googleusercontent.com/M2U-1GcgsTByial7tio8m9AtF5cOJ2ZOJPecO5a3cYK73hXJOL-BI_p_5PyNhoxAGuDm",
+                visitUrl: "https://ai.studio/apps/drive/1hpI0KSdEUUoqfNUMBM30amBq3xbQwAVd"
             },
             {
                 id: 2,
                 title: "Blockchain Identity Verification",
                 description: "Secure decentralized identity management system for financial institutions.",
-                tags: ["Blockchain", "Security", "Fintech"]
+                tags: ["Blockchain", "Security", "Fintech"],
+                imageUrl: null, // No image for this project yet
+                visitUrl: null
             },
             {
                 id: 3,
                 title: "IoT Smart City Solutions",
                 description: "Integrated urban management platform connecting sensors and city infrastructure.",
-                tags: ["IoT", "Smart Cities", "Infrastructure"]
+                tags: ["IoT", "Smart Cities", "Infrastructure"],
+                imageUrl: null, // No image for this project yet
+                visitUrl: null
             }
         ];
 
@@ -201,13 +207,41 @@
                     `;
                 });
 
+                // Create Project Image HTML (conditionally)
+                let projectImageHTML = '';
+                if (project.imageUrl) {
+                    projectImageHTML = `
+                        <img src="${project.imageUrl}" alt="${project.title}" class="rounded-xl w-full h-48 mb-6 object-cover" onerror="this.onerror=null;this.src='https.placehold.co/600x400/374151/ffffff?text=Image+Not+Found';">
+                    `;
+                } else {
+                    projectImageHTML = `
+                        <div class="bg-gradient-to-r from-blue-400 to-indigo-500 rounded-xl w-full h-48 mb-6 flex items-center justify-center">
+                            <div class="text-white text-xl font-bold">Project Preview</div>
+                        </div>
+                    `;
+                }
+
+                // Create "Visit" button/link HTML
+                let visitButtonHTML = '';
+                if (project.visitUrl) {
+                    visitButtonHTML = `
+                        <a href="${project.visitUrl}" target="_blank" rel="noopener noreferrer" class="py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors text-center block">
+                            Visit
+                        </a>
+                    `;
+                } else {
+                    visitButtonHTML = `
+                        <button class="py-2 bg-gray-400 text-white font-medium rounded-lg cursor-not-allowed" disabled>
+                            Visit
+                        </button>
+                    `;
+                }
+
                 // Create project card HTML
                 projectsHTML += `
                     <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:-translate-y-1">
                         <div class="p-6">
-                            <div class="bg-gradient-to-r from-blue-400 to-indigo-500 rounded-xl w-full h-48 mb-6 flex items-center justify-center">
-                                <div class="text-white text-xl font-bold">Project Preview</div>
-                            </div>
+                            ${projectImageHTML}
                             <h3 class="text-xl font-bold text-gray-900 mb-3">${project.title}</h3>
                             <p class="text-gray-600 mb-4">${project.description}</p>
                             <div class="flex flex-wrap gap-2 mb-6">
@@ -217,9 +251,7 @@
                                 <button class="py-2 bg-white border border-blue-600 text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-colors">
                                     Details
                                 </button>
-                                <button class="py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors">
-                                    Visit
-                                </button>
+                                ${visitButtonHTML}
                             </div>
                         </div>
                     </div>
@@ -245,4 +277,5 @@
     </script>
 </body>
 </html>
+
 
