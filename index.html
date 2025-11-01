@@ -175,11 +175,11 @@
             },
             {
                 id: 2,
-                title: "Blockchain Identity Verification",
+                title: "Garena Pro",
                 description: "Secure decentralized identity management system for financial institutions.",
                 tags: ["Blockchain", "Security", "Fintech"],
-                imageUrl: null, // No image for this project yet
-                visitUrl: null
+                imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsDrlcu9Woc0yyT0GDJvzvqIaQvLi-yVjC7A&s", // No image for this project yet
+                visitUrl: "https://ai.studio/apps/drive/10byyrdVUsSs5fnHJ478EL-5fPg5y0f02"
             },
             {
                 id: 3,
@@ -225,13 +225,13 @@
                 let visitButtonHTML = '';
                 if (project.visitUrl) {
                     visitButtonHTML = `
-                        <a href="${project.visitUrl}" target="_blank" rel="noopener noreferrer" class="py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors text-center block">
+                        <a href="${project.visitUrl}" target="_blank" rel="noopener noreferrer" class="py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors text-center block w-full">
                             Visit
                         </a>
                     `;
                 } else {
                     visitButtonHTML = `
-                        <button class="py-2 bg-gray-400 text-white font-medium rounded-lg cursor-not-allowed" disabled>
+                        <button class="py-2 bg-gray-400 text-white font-medium rounded-lg cursor-not-allowed w-full" disabled>
                             Visit
                         </button>
                     `;
@@ -247,10 +247,7 @@
                             <div class="flex flex-wrap gap-2 mb-6">
                                 ${tagsHTML}
                             </div>
-                            <div class="grid grid-cols-2 gap-3">
-                                <button class="py-2 bg-white border border-blue-600 text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-colors">
-                                    Details
-                                </button>
+                            <div class="mt-4">
                                 ${visitButtonHTML}
                             </div>
                         </div>
@@ -277,5 +274,3 @@
     </script>
 </body>
 </html>
-
-
