@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MGP LABS - Innovating Tomorrow's Solutions</title>
-    <!-- Load Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Inter font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Load Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter font --><link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
     <style>
@@ -19,8 +17,7 @@
 </head>
 <body class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 font-sans">
 
-    <!-- Navigation Bar -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <!-- Navigation Bar --><nav class="bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
@@ -29,27 +26,23 @@
                     </div>
                 </div>
                 
-                <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center space-x-8">
+                <!-- Desktop Navigation --><div class="hidden md:flex items-center space-x-8">
                     <a href="#home" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Home</a>
                     <a href="#projects" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Projects</a>
                 </div>
                 
-                <!-- Mobile menu button -->
-                <div class="md:hidden flex items-center">
+                <!-- Mobile menu button --><div class="md:hidden flex items-center">
                     <button
                         id="mobile-menu-button"
                         onclick="toggleMenu()"
                         class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 focus:outline-none"
                     >
-                        <!-- Menu Icon (lucide-react) -->
-                        <svg id="menu-icon" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <!-- Menu Icon (lucide-react) --><svg id="menu-icon" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <line x1="4" x2="20" y1="12" y2="12"></line>
                             <line x1="4" x2="20" y1="6" y2="6"></line>
                             <line x1="4" x2="20" y1="18" y2="18"></line>
                         </svg>
-                        <!-- X Icon (lucide-react) -->
-                        <svg id="x-icon" class="h-6 w-6 hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <!-- X Icon (lucide-react) --><svg id="x-icon" class="h-6 w-6 hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M18 6 6 18"></path>
                             <path d="m6 6 12 12"></path>
                         </svg>
@@ -58,20 +51,17 @@
             </div>
         </div>
         
-        <!-- Mobile Navigation -->
-        <div id="mobile-menu" class="md:hidden hidden">
+        <!-- Mobile Navigation --><div id="mobile-menu" class="md:hidden hidden">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg">
                 <a href="#home" class="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50" onclick="toggleMenu()">
-                    <!-- Home Icon (lucide-react) -->
-                    <svg class="mr-2 h-4 w-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <!-- Home Icon (lucide-react) --><svg class="mr-2 h-4 w-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                         <polyline points="9 22 9 12 15 12 15 22"></polyline>
                     </svg>
                     Home
                 </a>
                 <a href="#projects" class="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50" onclick="toggleMenu()">
-                    <!-- Folder Icon (lucide-react) -->
-                    <svg class="mr-2 h-4 w-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <!-- Folder Icon (lucide-react) --><svg class="mr-2 h-4 w-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"></path>
                     </svg>
                     Projects
@@ -80,12 +70,10 @@
         </div>
     </nav>
 
-    <!-- Hero Section with Banner -->
-    <section id="home" class="relative py-16 md:py-24">
+    <!-- Hero Section with Banner --><section id="home" class="relative py-16 md:py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <!-- Text Content -->
-                <div class="order-2 lg:order-1">
+                <!-- Text Content --><div class="order-2 lg:order-1">
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
                         Innovating Tomorrow's <span class="text-blue-600">Solutions</span>
                     </h1>
@@ -108,8 +96,7 @@
                     </div>
                 </div>
                 
-                <!-- Banner Image -->
-                <div class="order-1 lg:order-2 relative">
+                <!-- Banner Image --><div class="order-1 lg:order-2 relative">
                     <div class="relative rounded-2xl overflow-hidden shadow-2xl">
                         <img 
                             src="https://media.licdn.com/dms/image/v2/D4D12AQFyWh9bRy42gw/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1713510150573?e=2147483647&v=beta&t=S55LxaQ5OUnRrMPci08vmupggjzklEQhwiCsdN5qfN4" 
@@ -123,8 +110,7 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-16 bg-white">
+    <!-- Projects Section --><section id="projects" class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Our Projects</h2>
@@ -133,20 +119,16 @@
                 </p>
             </div>
             
-            <!-- Grid where projects will be injected by JavaScript -->
-            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project cards will be rendered here -->
-            </div>
+            <!-- Grid where projects will be injected by JavaScript --><div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project cards will be rendered here --></div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
+    <!-- Footer --><footer class="bg-gray-900 text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
                 <p class="text-lg">Powered by <span class="font-bold text-blue-400">MGP Labs</span></p>
-                <!-- Current year will be injected by JavaScript -->
-                <p class="mt-2 text-gray-400">© <span id="current-year"></span> All rights reserved.</p>
+                <!-- Current year will be injected by JavaScript --><p class="mt-2 text-gray-400">© <span id="current-year"></span> All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -166,6 +148,14 @@
         // --- Project Data ---
         const projects = [
             {
+                id: 1,
+                title: "LegendLifestyle",
+                description: "An e-commerce website for a sophisticated lifestyle brand, offering curated collections and exclusive products.",
+                tags: ["E-commerce", "Branding", "Google Sites"],
+                imageUrl: "https://t4.ftcdn.net/jpg/03/31/93/85/360_F_331938599_nmkc39B7E74s1G5P01b0YCJ6x0MNMqJz.jpg", 
+                visitUrl: "https://sites.google.com/view/legend-lifestyle"
+            },
+            {
                 id: 2,
                 title: "Muslim AI",
                 description: "An AI-powered assistant to help people learn about Islam, providing answers grounded in Google Search. It supports multiple languages including English, Urdu, Arabic, Hindi, Roman Urdu, and Roman Hindi.",
@@ -177,17 +167,17 @@
                 id: 3,
                 title: "Garena Pro",
                 description: "An AI-powered assistant for Garena Free Fire and Gameloft players. Get help with game settings, find the latest tournaments and events, and ask questions about esports players and content creators.",
-                tags: ["Blockchain", "Security", "Fintech"],
-                imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsDrlcu9Woc0yyT0GDJvzvqIaQvLi-yVjC7A&s", // No image for this project yet
+                tags: ["AI", "Gaming", "Esports"],
+                imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsDrlcu9Woc0yyT0GDJvzvqIaQvLi-yVjC7A&s", 
                 visitUrl: "https://ai.studio/apps/drive/10byyrdVUsSs5fnHJ478EL-5fPg5y0f02"
             },
             {
                 id: 4,
                 title: "Ghost AI",
                 description: "A production-ready web app chatbot that behaves like a smart assistant, featuring conversational AI and on-demand image generation.",
-                tags: ["IoT", "Smart Cities", "Infrastructure"],
-                imageUrl: "https://i.ytimg.com/vi/0ot9PNufqTE/maxresdefault.jpg", // No image for this project yet
-                visitUrl: "https://ai.studio/apps/drive/14fbQmmoH9mUtpNUsO2Vt5giq7l4e08W3"
+                tags: ["AI", "Chatbot", "Web App"],
+                imageUrl: "https://i.ytimg.com/vi/0ot9PNufqTE/maxresdefault.jpg", 
+                visitUrl: "https://ai.studio.com/apps/drive/14fbQmmoH9mUtpNUsO2Vt5giq7l4e08W3"
             }
         ];
 
@@ -211,7 +201,7 @@
                 let projectImageHTML = '';
                 if (project.imageUrl) {
                     projectImageHTML = `
-                        <img src="${project.imageUrl}" alt="${project.title}" class="rounded-xl w-full h-48 mb-6 object-cover" onerror="this.onerror=null;this.src='https.placehold.co/600x400/374151/ffffff?text=Image+Not+Found';">
+                        <img src="${project.imageUrl}" alt="${project.title}" class="rounded-xl w-full h-48 mb-6 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/374151/ffffff?text=Image+Not+Found';">
                     `;
                 } else {
                     projectImageHTML = `
